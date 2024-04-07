@@ -12,5 +12,11 @@ class Calculator:
             return x / y
         else:
             return "Error: Division by zero"
+        
     def power(self, x, y):
         return x ** y
+    
+    def gcd(self, x, y):
+        while y:
+            x, y = y, x % y
+        return abs(x)

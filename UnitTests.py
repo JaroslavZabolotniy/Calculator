@@ -30,6 +30,11 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(self.calc.power(5, 0), 1)
         self.assertEqual(self.calc.power(10, -2), 0.01)
 
+    def test_gcd(self):
+        self.assertEqual(self.calc.gcd(24, 16), 8)
+        self.assertEqual(self.calc.gcd(17, 5), 1)
+        self.assertEqual(self.calc.gcd(36, 48), 12)
+        self.assertEqual(self.calc.gcd(0, 5), 5)
 
 if __name__ == '__main__':
     unittest.main()
