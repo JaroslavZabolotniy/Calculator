@@ -20,3 +20,6 @@ class Calculator:
         while y:
             x, y = y, x % y
         return abs(x)
+    
+    def lcm(self, x, y):
+        return x * y // self.gcd(x, y)

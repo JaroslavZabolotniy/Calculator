@@ -36,5 +36,12 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(self.calc.gcd(36, 48), 12)
         self.assertEqual(self.calc.gcd(0, 5), 5)
 
+    def test_lcm(self):
+        self.assertEqual(self.calc.lcm(4, 6), 12)
+        self.assertEqual(self.calc.lcm(15, 10), 30)
+        self.assertEqual(self.calc.lcm(0, 5), 0)
+        self.assertEqual(self.calc.lcm(3, 0), 0)
+
+
 if __name__ == '__main__':
     unittest.main()
