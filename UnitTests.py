@@ -1,6 +1,5 @@
 import unittest
 from Calculator import Calculator
-
 class TestCalculator(unittest.TestCase):
     def setUp(self):
         self.calc = Calculator()
@@ -26,5 +25,11 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(self.calc.divide(0, 5), 0)
         self.assertEqual(self.calc.divide(10, 0), "Error: Division by zero")
         
+    def test_power(self):
+        self.assertEqual(self.calc.power(2, 3), 8)
+        self.assertEqual(self.calc.power(5, 0), 1)
+        self.assertEqual(self.calc.power(10, -2), 0.01)
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -12,3 +12,5 @@ class Calculator:
             return x / y
         else:
             return "Error: Division by zero"
+    def power(self, x, y):
+        return x ** y
