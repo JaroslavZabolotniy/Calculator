@@ -11,10 +11,13 @@ class Calculator:
         if y != 0:
             return x / y
         else:
-            return "Error: Division by zero"
+            raise ZeroDivisionError("Error: Division by zero")
         
     def power(self, x, y):
-        return x ** y
+        if x == 0 and y == 0:
+            raise ArithmeticError("Error: 0 in power of 0")
+        else:
+            return x ** y
     
     def gcd(self, x, y):
         while y:
