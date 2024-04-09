@@ -23,12 +23,15 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(self.calc.divide(8, 2), 4)
         self.assertEqual(self.calc.divide(10, 3), 3.3333333333333335)
         self.assertEqual(self.calc.divide(0, 5), 0)
-        self.assertEqual(self.calc.divide(10, 0), "Error: Division by zero")
+        with self.assertRaises(ZeroDivisionError):
+            self.calc.divide(10, 0)
         
     def test_power(self):
         self.assertEqual(self.calc.power(2, 3), 8)
         self.assertEqual(self.calc.power(5, 0), 1)
         self.assertEqual(self.calc.power(10, -2), 0.01)
+        with self.assertRaises(ArithmeticError):
+            self.calc.power(0, 0)
 
     def test_gcd(self):
         self.assertEqual(self.calc.gcd(24, 16), 8)
